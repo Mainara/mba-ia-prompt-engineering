@@ -41,6 +41,12 @@ Avaliação sistemática de prompts e LLMs:
 - Comparação pairwise de prompts
 - Integração com LangSmith e Langfuse
 
+### mba-ia-pull-evaluation-prompt
+Pipeline de otimização contínua de prompts validado por LLM-as-a-Judge:
+- **Sincronização com Hub**: Scripts de push/pull para o LangSmith Prompt Hub (`src/pull_prompts.py`, `src/push_prompts.py`).
+- **Avaliação Automatizada**: Suíte de testes LLM-as-a-Judge (`src/evaluate.py`, `src/metrics.py`) mapeando métricas estritas: Helpfulness, Correctness, F1-Score, Clarity e Precision (alvo >= 0.90).
+- **Engenharia de Prompt**: Utilização de técnicas como *Few-Shot Prompting*, *Chain of Thought (CoT)* e *Role Prompting* (`prompts/bug_to_user_story_v2.yml`) para adaptar a saída a estruturas diversas, extraindo detalhes de SLAS e mitigando alucinações.
+
 ## Configuração do Ambiente
 
 **Importante:** Cada pasta do curso é auto-contida, possuindo seu próprio ambiente virtual, arquivo de dependências (requirements.txt) e configuração de variáveis de ambiente (.env).
